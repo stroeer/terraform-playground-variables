@@ -1,13 +1,13 @@
 variable "workspace_to_environment_map" {
   type = map(string)
   default = {
-    tonline-playground = "playground"
-    tonline-production = "production"
+    playground = "playground"
+    production = "production"
   }
 }
 
 output "environment" {
-  value = lookup(var.workspace_to_environment_map, terraform.workspace, "tonline-playground")
+  value = lookup(var.workspace_to_environment_map, terraform.workspace, "playground")
 }
 
 output "default_tags" {
